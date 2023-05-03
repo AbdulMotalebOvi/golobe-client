@@ -3,15 +3,14 @@ import img1 from '../assests/images/re1.png'
 const Common = ({ title }) => {
     return (
         <div className='my-10'>
-            <div className='relative before:absolute before:inset-0 before:bg-black before:bg-opacity-50 before:rounded-[20px]'>
+            <div className='relative'>
                 <img src={img1} alt="" className='w-full h-[250px] object-cover rounded-[20px]' />
-                <div class="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white 
-                text-center ">
-                    <h1 class="text-4xl font-bold ">{title}</h1>
-
+                <div className='absolute inset-0 bg-black bg-opacity-50 rounded-[20px] flex items-center justify-center'>
+                    <h1 className='text-4xl font-bold text-white'>{title}</h1>
                 </div>
             </div>
         </div>
+
     );
 };
 

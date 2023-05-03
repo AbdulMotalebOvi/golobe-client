@@ -2,16 +2,13 @@ import React from 'react';
 
 const Service = () => {
     return (
-        <div className='grid grid-cols-4 gap-5 my-20'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 my-20'>
             <div>
                 <h5 className='text-orange-600 font-semibold'>What we serve?</h5>
                 <h2 className='text-black font-extrabold text-4xl '>We Offer Our Best Services</h2>
             </div>
 
-            <div
-                className="relative rounded-xl border border-gray-100 p-4 sm:p-6 lg:p-8"
-            >
-
+            <div className="relative rounded-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
                 <div className=' absolute after: content-[""] bg-orange-500  rounded-[100%] w-[60px]  top-[10px] h-[60px]'>
                     <span className=' relative text-white text-[40px] left-2'><i className="ri-sun-cloudy-line"></i></span>
                 </div>
@@ -27,10 +24,7 @@ const Service = () => {
                 </div>
             </div>
 
-            <div
-                className="relative rounded-xl border border-gray-100 p-4 sm:p-6 lg:p-8"
-            >
-
+            <div className="relative rounded-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
                 <div className=' absolute after: content-[""] bg-orange-500  rounded-[100%] w-[60px]  top-[10px] h-[60px]'>
                     <span className=' relative text-white text-[40px] left-2'>
                         <i class="ri-compass-line"></i>
@@ -48,10 +42,7 @@ const Service = () => {
                 </div>
             </div>
 
-            <div
-                className="relative rounded-xl border border-gray-100 p-4 sm:p-6 lg:p-8"
-            >
-
+            <div className="relative rounded-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
                 <div className=' absolute after: content-[""] bg-orange-500  rounded-[100%] w-[60px]  top-[10px] h-[60px]'>
                     <span className=' relative text-white text-[40px] left-2'><i class="ri-folder-settings-line"></i></span>
                 </div>
@@ -67,6 +58,7 @@ const Service = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

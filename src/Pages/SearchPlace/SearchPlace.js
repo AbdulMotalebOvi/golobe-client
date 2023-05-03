@@ -2,11 +2,13 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Common from '../../Common/Common';
 import locationImg from '../../assests/svg/map-pin-line.svg'
+import useTitle from '../../Hooks/useTitle';
 
 
 
 
 const SearchPlace = () => {
+    useTitle('SearchPlace')
     const location = useLocation()
     const { result } = location.state;
     return (

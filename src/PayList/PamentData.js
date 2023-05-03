@@ -51,16 +51,17 @@ const PamentData = ({ refetch, bookings }) => {
     return (
         <tbody className="divide-y divide-gray-200">
             <tr>
-                <td className='cursor-pointer text-2xl' onClick={() => handlerToDelete(bookings?._id)}><i className="ri-delete-bin-6-line "></i></td>
+                <td className='cursor-pointer text-2xl' onClick={() => handlerToDelete(bookings?._id)}>
+                    <i className="ri-delete-bin-6-line "></i>
+                </td>
                 {
                     bookings?.transactionId ?
                         <>
-                            <td className="whitespace-nowrap px-4 py-2 ">
+                            <td className="whitespace-nowrap px-4 py-2 hidden sm:table-cell">
                                 {bookings?.email}
                             </td>
                         </>
                         :
-
                         <td className="whitespace-nowrap px-4 py-2 ">
                             <img
                                 src={bookings?.image_url}
@@ -73,18 +74,14 @@ const PamentData = ({ refetch, bookings }) => {
                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{bookings?.phone}</td>
                 {
                     bookings?.transactionId ?
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">${bookings?.price}</td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700 hidden sm:table-cell">${bookings?.price}</td>
                         :
-                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">${bookings?.total}</td>
-
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700 hidden sm:table-cell">${bookings?.total}</td>
                 }
                 <td className="whitespace-nowrap px-4 py-2">
-
-
                     {
                         bookings?.transactionId &&
                         <Link
-
                             className="inline-block rounded bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
                         >
                             paid
@@ -101,8 +98,9 @@ const PamentData = ({ refetch, bookings }) => {
                     }
                 </td>
             </tr>
-
         </tbody>
+
+
 
     );
 };

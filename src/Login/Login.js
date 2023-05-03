@@ -64,58 +64,46 @@ const Login = () => {
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
     return (
-        <div className='grid grid-cols-2 gap-10 my-20'>
-            <div className='w-full '>
-                <div className='mt-[60px] space-y-2'>
-                    <h2 className='text-3xl  font-bold '>Login</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 my-20">
+            <div class="w-full">
+                <div class="md:mt-[60px] space-y-2">
+                    <h2 class="text-3xl font-bold">Login</h2>
                     <p>Login to access your Golobe account</p>
                 </div>
-                <form onSubmit={handleSubmit(submit)} >
-                    <div className="form-control w-full mt-[48px] ">
-                        <label className="label">
-                            <span className="label-text">Email</span>
+                <form onSubmit={handleSubmit(submit)}>
+                    <div class="form-control w-full mt-[48px]">
+                        <label class="label">
+                            <span class="label-text">Email</span>
                         </label>
-                        <input className="input input-bordered w-full " {...register("email", { required: true })} />
-
-                        {errors.email?.type === 'required' && <p className='text-red-600 font-semibold'>Email is required</p>}
-
-                        <label className="label">
-                            <span className="label-text">Password</span>
+                        <input class="input input-bordered w-full" {...register("email", { required: true })} />
+                        {errors.email?.type === 'required' && <p class="text-red-600 font-semibold">Email is required</p>}
+                        <label class="label">
+                            <span class="label-text">Password</span>
                         </label>
-                        <input type='password' className="input input-bordered w-full " {...register("password",
-                            {
-                                required: true,
-                                minLength: { value: 6, message: 'Password Must be At lest 6 characters or longer' }
-                            }
+                        <input type='password' class="input input-bordered w-full" {...register("password", {
+                            required: true,
+                            minLength: { value: 6, message: 'Password Must be At lest 6 characters or longer' }
+                        }
                         )} />
-                        <p className='text-red-600 font-semibold '>{error}</p>
-
-                        {errors.password?.type === 'required' && <p className='text-red-600 font-semibold'>Password is required</p>}
-                        <label className="label">
-                            <span className="label-text text-[13px]">Forget Password?</span>
+                        <p class="text-red-600 font-semibold ">{error}</p>
+                        {errors.password?.type === 'required' && <p class="text-red-600 font-semibold">Password is required</p>}
+                        <label class="label">
+                            <span class="label-text text-[13px]">Forget Password?</span>
                         </label>
-
                     </div>
-                    <button type="submit" className='mt-4 btn w-full bg-[#8DD3BB]  text-black border-none my-5 hover:bg-[#7bffd1]' >Login</button>
-                    <p className='text-[15px] mt-3 text-center my-5'>Do you have a account? <span><Link to='/GolobeSecurity/signup' className='text-[#FF8682] font-semibold'>Sign Up</Link></span></p>
-
+                    <button type="submit" class="mt-4 btn w-full bg-[#8DD3BB] text-black border-none my-5 hover:bg-[#7bffd1]">Login</button>
+                    <p class="text-[15px] mt-3 text-center my-5">Do you have a account? <span><Link to='/GolobeSecurity/signup' class='text-[#FF8682] font-semibold'>Sign Up</Link></span></p>
                 </form>
-                <div className="flex flex-col w-full border-opacity-50">
-                    <div className="divider ">Or login with </div>
-                    <div className='grid grid-cols-3 gap-3 my-6'>
-
-                        <button className="btn btn-outline border-[#8DD3BB] hover:border-none hover:bg-[#95f5d4]"><img src={facebook} alt="" /></button>
-
-                        <button onClick={() => googleSignIn()} className="btn btn-outline border-[#8DD3BB] hover:border-none hover:bg-[#95f5d4]"><img src={google} alt="" /></button>
-
-                        <button className="btn btn-outline border-[#8DD3BB] hover:border-none hover:bg-[#95f5d4]"><img src={apple} alt="" /></button>
+                <div class="flex flex-col w-full border-opacity-50">
+                    <div class="divider ">Or login with</div>
+                    <div class="grid grid-cols-3 gap-3 my-6">
+                        <button class="btn btn-outline border-[#8DD3BB] hover:border-none hover:bg-[#95f5d4]"><img src={facebook} alt="" /></button>
+                        <button onClick={() => googleSignIn()} class="btn btn-outline border-[#8DD3BB] hover:border-none hover:bg-[#95f5d4]"><img src={google} alt="" /></button>
+                        <button class="btn btn-outline border-[#8DD3BB] hover:border-none hover:bg-[#95f5d4]"><img src={apple} alt="" /></button>
                     </div>
-
-                    {/* <div> <button className="btn btn-outline w-full " onClick={() => handlerToSignIn()} >CONTINUE WITH GOOGLE</button></div> */}
                 </div>
-
             </div>
-            <div className='w-[550px] h-[700px]'>
+            <div className='w-full md:w-[550px] h-[500px] md:h-[700px]'>
                 <Swiper
                     centeredSlides={true}
                     autoplay={{
@@ -125,22 +113,20 @@ const Login = () => {
                     modules={[A11y, Autoplay]}
                     spaceBetween={50}
                     slidesPerView={1}
-
                     onAutoplayTimeLeft={onAutoplayTimeLeft}
                     className="mySwiper"
-
-
                 >
-                    <SwiperSlide><img src={img1} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={img2} alt="" /></SwiperSlide>
+                    <SwiperSlide><img src={img1} alt="" className="w-full h-full object-cover" /></SwiperSlide>
+                    <SwiperSlide><img src={img2} alt="" className="w-full h-full object-cover" /></SwiperSlide>
                     <div className="autoplay-progress" slot="container-end">
                         <svg viewBox="0 0 48 48" ref={progressCircle}>
                             <circle cx="24" cy="24" r="20"></circle>
                         </svg>
                         <span ref={progressContent}></span>
                     </div>
-                </Swiper >
+                </Swiper>
             </div>
+
         </div >
     );
 };
